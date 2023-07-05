@@ -1,10 +1,11 @@
-
+import 'package:bloc_VIDFLIX/bloc/playlist/playlist_bloc.dart';
 import 'package:bloc_VIDFLIX/functions/all_functions.dart';
 import 'package:bloc_VIDFLIX/model/model_file.dart';
 import 'package:bloc_VIDFLIX/ui/setting_page_screen/setting_page.dart';
 import 'package:bloc_VIDFLIX/widgets/appbarWidget.dart';
 import 'package:bloc_VIDFLIX/widgets/list_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 class PlaylistScreen extends StatelessWidget {
@@ -98,16 +99,18 @@ class PlaylistScreen extends StatelessWidget {
 
                                                         playlistBox.add(
                                                             playlistModel); //hive
-                                                        addplaylist(
-                                                            playlistController
-                                                                .text
-                                                                .trim());
+                                                        BlocProvider.of<
+                                                                    PlaylistBloc>(
+                                                                context)
+                                                            .add(AddPlaylist(
+                                                                playlistName: playlistController
+                                                                    .text
+                                                                    .trim(),));
 
                                                         playlistController
                                                             .clear();
                                                         Navigator.of(context)
                                                             .pop();
-                                                        
                                                       }
                                                     },
                                                     child: Text('add')),

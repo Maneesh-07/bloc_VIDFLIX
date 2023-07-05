@@ -19,6 +19,7 @@ class _SearchscreenState extends State<Searchscreen> {
   TextEditingController searchController = TextEditingController();
 
   List searchList = List<String>.from(allVideos);
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,7 +49,8 @@ class _SearchscreenState extends State<Searchscreen> {
               style: TextStyle(color: allTextColor),
             ),
             const SizedBox(height: 10),
-            Expanded(child: BlocBuilder<SearchBloc, SearchPageState>(
+            Expanded(
+              child: BlocBuilder<SearchBloc, SearchPageState>(
               builder: (context, state) {
                 log('$state');
                 return state.results.isEmpty

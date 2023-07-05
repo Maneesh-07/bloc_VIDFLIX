@@ -31,10 +31,10 @@ String getVideoName(String path) {
 }
 
 //creating playlist
-addplaylist(String playlistName) {
-  playlist[playlistName] = [];
-  playlistKey.add(playlistName);
-}
+// addplaylist(String playlistName) {
+//   playlist[playlistName] = [];
+//   playlistKey.add(playlistName);
+// }
 
 //show from videolist dialouge add playlist and playlist hive
 Future<dynamic> showDialougeOfPlaylist(BuildContext context,

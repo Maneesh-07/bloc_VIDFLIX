@@ -204,7 +204,10 @@ class ListViewWidgetForPlaylist extends StatelessWidget {
 //inner playlist section list view widget
 // ignore: must_be_immutable
 class ListViewWidgetForInnerPlaylist extends StatelessWidget {
-  ListViewWidgetForInnerPlaylist({super.key, required this.fromPlaylistName});
+  ListViewWidgetForInnerPlaylist({
+    super.key,
+    required this.fromPlaylistName,
+  });
 
   String fromPlaylistName;
   @override

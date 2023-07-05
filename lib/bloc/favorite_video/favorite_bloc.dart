@@ -7,8 +7,14 @@ part 'favorite_state.dart';
 
 class FavoriteBloc extends Bloc<FavoriteEvent, FavoriteState> {
   FavoriteBloc() : super(FavoriteInitial(favoriteVideo: favoritesVideoNotify)) {
-    on<FavoriteEvent>((event, emit) {
+    on<AddfavoriteVideo>((event, emit) {
+      favoritesVideoNotify.add(event.videoPath);
+      return emit(FavoriteState(favoriteVideo: favoritesVideoNotify));
+    });
 
+    on<RemoveFavoriteVideo>((event, emit) {
+      favoritesVideoNotify.remove(event.videoPath);
+      return emit(FavoriteState(favoriteVideo: favoritesVideoNotify));
     });
   }
 }

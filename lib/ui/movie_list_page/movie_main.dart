@@ -1,4 +1,3 @@
-
 import 'package:bloc_VIDFLIX/Infrastructure/api_keys.dart';
 import 'package:bloc_VIDFLIX/ui/movie_list_page/toprated_list.dart';
 import 'package:bloc_VIDFLIX/ui/movie_list_page/trending_list.dart';

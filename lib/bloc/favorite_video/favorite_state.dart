@@ -3,6 +3,8 @@ part of 'favorite_bloc.dart';
 
 class FavoriteState {
   final List<dynamic> favoriteVideo;
+
+  
   FavoriteState({
     required this.favoriteVideo,
   });
